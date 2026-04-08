@@ -2,6 +2,7 @@ import {promises as fs} from "node:fs";
 import http from "node:http"
 import {join }from "node:path"
 
+
 import { fileURLToPath } from 'node:url';
 import { dirname } from 'node:path';
 import { stringify } from "node:querystring";
@@ -58,6 +59,6 @@ const server = http.createServer(async (req,res) =>{
 
 })
 
-server.listen(3000,() =>{
+server.listen(process.env.PORT,() =>{
    console.log("server running on porst 3000")
 })
