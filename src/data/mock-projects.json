@@ -1,0 +1,36 @@
+[
+  {
+    "id": "proj-1",
+    "name": "E-Learning Platform",
+    "description": "A web-based platform for AAiT students to access course materials.",
+    "tasks": [
+      {
+        "id": "t1",
+        "title": "Setup PostgreSQL Database",
+        "status": "completed",
+        "priority": "high"
+      },
+      {
+        "id": "t2",
+        "title": "Develop User Auth API",
+        "status": "in-progress",
+        "priority": "high"
+      }
+    ],
+    "createdAt": "2026-04-08T10:00:00Z"
+  },
+  {
+    "id": "proj-2",
+    "name": "Inventory Management System",
+    "description": "Real-time tracking for local warehouse stock.",
+    "tasks": [
+      {
+        "id": "t3",
+        "title": "UI Mockups in Figma",
+        "status": "pending",
+        "priority": "medium"
+      }
+    ],
+    "createdAt": "2026-04-07T15:30:00Z"
+  }
+]
