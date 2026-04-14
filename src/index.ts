@@ -1,4 +1,4 @@
-import {promises as fs} from "node:fs";
+import {promises as fs, read} from "node:fs";
 import http from "node:http"
 import {join }from "node:path"
 
@@ -13,7 +13,7 @@ const __dirname = dirname(__filename);
 
 async function getJsonData(fileName:string){
    try{
-      const filePath = join(__dirname, "..", "src/data", fileName);
+      const filePath = join(__dirname, "data", fileName);
       const data = await fs.readFile(filePath,"utf-8")
       return JSON.parse(data);
 
@@ -23,13 +23,14 @@ async function getJsonData(fileName:string){
 }
 async function readUsers() {
    try{
-      const user = await getJsonData("mock-user.json")
+      const user = await getJsonData("mock-users.json")
       console.log(user)
    }catch(error){
       console.log("problem happend",error)
    }
   
 }
+
 
 
 const server = http.createServer(async (req,res) =>{
@@ -59,6 +60,8 @@ const server = http.createServer(async (req,res) =>{
 
 })
 
-server.listen(process.env.PORT,() =>{
+const PORT = process.env.PORT || 3000;
+
+server.listen(PORT,() =>{
    console.log("server running on porst 3000")
 })
